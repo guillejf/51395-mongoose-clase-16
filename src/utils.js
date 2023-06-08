@@ -26,7 +26,7 @@ export async function connectMongo() {
   try {
     await connect(
       /* PONER TU STRING ENTERO ACA */
-      'mongodb+srv://guillermofergnani:1RW65A7n2ZPPEMWQ@51380.yhqtnxt.mongodb.net/ecommerce?retryWrites=true&w=majority'
+      ''
     );
     console.log('plug to mongo!!!');
 
