@@ -19,12 +19,12 @@ const studentSchema = new Schema({
   },
 });
 
-/* studentSchema.pre('findOne', function () {
+studentSchema.pre('find', function () {
   this.populate('courses.course');
 });
 
-studentSchema.pre('find', function () {
+studentSchema.pre('findOne', function () {
   this.populate('courses.course');
-}); */
+});
 
 export const StudentsModel = model('students', studentSchema);

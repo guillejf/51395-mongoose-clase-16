@@ -24,17 +24,14 @@ import faker from 'faker';
 import { UserModel } from './DAO/models/users.model.js';
 export async function connectMongo() {
   try {
-    await connect(
-      /* PONER TU STRING ENTERO ACA */
-      ''
-    );
+    await connect('mongodb+srv://guillermofergnani:g5JdbbGYiCXw7vHS@51395.qrp9dhg.mongodb.net/');
     console.log('plug to mongo!!!');
 
     /* let student = await StudentsModel.findOne({ _id: '6477e9884df43016016bf2fa' });
     student.courses.push({ course: '6477e9ed7ebf0ed7c12a3a16' });
     let res = await StudentsModel.updateOne({ _id: '6477e9884df43016016bf2fa' }, student); */
 
-    /* let res2 = await StudentsModel.find({});
+    /* let res2 = await StudentsModel.find({}); 
     console.log(JSON.stringify(res2, null, 4)); */
 
     /*  let student = await StudentsModel.find({});
@@ -47,6 +44,14 @@ export async function connectMongo() {
     let res = await StudentsModel.updateOne({ _id: '6477be0ac11ecddd0d42aa51' }, student);
     console.log(res); */
 
+    /* let student = await StudentsModel.findOne({ _id: '648261af17398abe3ca41985' });
+    student.courses.push({ course: '648262d8e1272ab070670c0e' });
+    let res = await StudentsModel.updateOne({ _id: '648261af17398abe3ca41985' }, student);
+    console.log(res); */
+
+    let todosLosEstudiantes = await StudentsModel.findOne({ _id: '648261af17398abe3ca41985' });
+    console.log(JSON.stringify(todosLosEstudiantes, null, 2));
+
     /* const created = CoursesModel.create({
       topics: ['web', 'software', 'backend'],
       students: [],
@@ -56,9 +61,18 @@ export async function connectMongo() {
       professor: 'guile',
     }); */
 
+    /* const created = CoursesModel.create({
+      topics: ['software', 'python'],
+      students: [],
+      title: 'backend',
+      description: 'wonderfull python course',
+      dificulty: 10,
+      professor: 'carlitos',
+    }); */
+
     /* const created = StudentsModel.create({
-      first_name: 'monica',
-      last_name: 'fernanda',
+      first_name: 'javier',
+      last_name: 'guerrero',
       email: 'g@g.com',
       gender: 'femenino',
       courses: [],
@@ -67,9 +81,12 @@ export async function connectMongo() {
     /* let res = await UserModel.find({ lastName: 'werwrwer' }).explain('executionStats');
     console.log(res); */
 
+    /* let res = await UserModel.find({ lastName: 'Upton' }).explain('executionStats');
+    console.log(res); */
+
     /* (async () => {
       const users = [];
-      for (let i = 0; i < 3000; i++) {
+      for (let i = 0; i < 7000; i++) {
         users.push({
           firstName: faker.name.firstName(),
           lastName: faker.name.lastName(),
